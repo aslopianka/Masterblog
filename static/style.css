@@ -25,3 +25,67 @@ h1 {
 .post p {
     margin: 10px 0;
 }
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+button > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+button {
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+
+form div {
+    margin-bottom: 20px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+input[type="text"] {
+    min-height: 45px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
