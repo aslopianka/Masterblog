@@ -28,6 +28,12 @@ def add():
 
     return render_template('add.html')
 
+@app.route('/delete/<int:post_id>')
+def delete(post_id):
+    all_posts = load_data_from_json_file('storage.json')
+    all_posts = [post for post in all_posts if post['id'] != post_id]
+    write_data_to_json_file('storage.json', all_posts)
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5001, debug=True)

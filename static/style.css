@@ -16,6 +16,8 @@ h1 {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .post h2 {
@@ -88,4 +90,14 @@ textarea {
     align-items: center;
     height: 100vh;
     flex-direction: column;
+}
+
+.delete-button {
+    background-color: #C21807;
+    border: none;
+}
+
+.delete-button > a {
+    color: #ffffff;
+    text-decoration: none;
 }

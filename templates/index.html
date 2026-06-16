@@ -15,9 +15,16 @@
     </div>
     {% for post in posts %}
         <div class="post">
-            <h2>{{ post.title }}</h2>
-            <p><em>Author: {{ post.author }}</em></p>
-            <p>{{ post.content }}</p>
+            <div>
+                <h2>{{ post.title }}</h2>
+                <p><em>Author: {{ post.author }}</em></p>
+                <p>{{ post.content }}</p>
+            </div>
+            <div>
+                <button class="delete-button">
+                    <a href="/delete/{{post.id}}">Delete</a>
+                </button>
+            </div>
         </div>
     {% endfor %}
 </body>
