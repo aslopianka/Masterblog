@@ -46,7 +46,7 @@ def update(post_id):
         return "Post not found", 404
 
     if request.method == 'POST':
-    
+
         updated_post = {
             'id': post_id,
             'title': request.form.get('title'),
@@ -65,4 +65,4 @@ def update(post_id):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
