@@ -9,23 +9,20 @@
 <body>
     <h1>Welcome to My Flask Blog!</h1>
     <div class="button-container">
-        <button>
-            <a href="/add">Add a new post</a>
-        </button>
+        <a class="btn add-button" href="/add">Add a new post</a>
     </div>
     {% for post in posts %}
-        <div class="post">
-            <div>
-                <h2>{{ post.title }}</h2>
-                <p><em>Author: {{ post.author }}</em></p>
-                <p>{{ post.content }}</p>
-            </div>
-            <div>
-                <button class="delete-button">
-                    <a href="/delete/{{post.id}}">Delete</a>
-                </button>
-            </div>
+    <div class="post">
+        <div class="post-content">
+            <h2>{{ post.title }}</h2>
+            <p><em>Author: {{ post.author }}</em></p>
+            <p>{{ post.content }}</p>
         </div>
+        <div class="post-actions">
+            <a href="/update/{{ post.id }}" class="btn update-button">Update</a>
+            <a href="/delete/{{ post.id }}" class="btn delete-button">Delete</a>
+        </div>
+    </div>
     {% endfor %}
 </body>
 </html>

@@ -1,1 +1,14 @@
-[{"id": 1, "title": "Annas Post", "author": "Anna", "content": "This is Anna's post."}]
+[
+  {
+    "id": 1,
+    "title": "Annas Post",
+    "author": "Anna",
+    "content": "This is Anna's post. Why the spaces?\r\n            "
+  },
+  {
+    "id": 2,
+    "title": "Another Post",
+    "author": "Another Author",
+    "content": "                Post post post.\r\n            \r\n            "
+  }
+]

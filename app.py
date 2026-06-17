@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-from utils import load_data_from_json_file, write_data_to_json_file
+from utils import load_data_from_json_file, write_data_to_json_file, fetch_post_by_id, write_data_to_json_file_by_id
 
 app = Flask(__name__)
 
@@ -28,12 +28,41 @@ def add():
 
     return render_template('add.html')
 
-@app.route('/delete/<int:post_id>')
+
+@app.route('/delete/<int:post_id>', methods=['DELETE'])
 def delete(post_id):
     all_posts = load_data_from_json_file('storage.json')
     all_posts = [post for post in all_posts if post['id'] != post_id]
     write_data_to_json_file('storage.json', all_posts)
     return redirect(url_for('index'))
+
+
+@app.route('/update/<int:post_id>', methods=['GET', 'POST'])
+def update(post_id):
+
+    post = fetch_post_by_id(post_id)
+
+    if post is None:
+        return "Post not found", 404
+
+    if request.method == 'POST':
+    
+        updated_post = {
+            'id': post_id,
+            'title': request.form.get('title'),
+            'author': request.form.get('author'),
+            'content': request.form.get('content')
+        }
+
+        write_data_to_json_file_by_id('storage.json', updated_post)
+        return redirect(url_for('index'))
+
+    else:
+     return render_template('update.html', post=post)
+
+
+
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5001, debug=True)
