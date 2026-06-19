@@ -20,7 +20,9 @@
         </div>
         <div class="post-actions">
             <a href="/update/{{ post.id }}" class="btn update-button">Update</a>
-            <a href="/delete/{{ post.id }}" class="btn delete-button">Delete</a>
+            <form class="delete-form" action="/delete/{{ post.id }}" method="POST">
+                <button type="submit" class="btn delete-button">Delete</button>
+            </form>
         </div>
     </div>
     {% endfor %}

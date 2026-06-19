@@ -72,6 +72,7 @@ h1 {
 .delete-button {
     background-color: #C21807;
     color: #ffffff;
+    width: 100%;
 }
 
 form {
@@ -82,6 +83,12 @@ form {
     width: 100%;
     max-width: 500px;
     box-sizing: border-box;
+}
+
+form.delete-form {
+    background: none;
+    padding: 0;
+    box-shadow: none;
 }
 
 form div {

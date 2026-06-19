@@ -41,7 +41,7 @@ def add():
     return render_template('add.html')
 
 
-@app.route('/delete/<int:post_id>', methods=['DELETE'])
+@app.route('/delete/<int:post_id>', methods=['POST'])
 def delete(post_id):
     """
     Delete a blog post by its ID and redirect to index.
@@ -81,7 +81,5 @@ def update(post_id):
 
 
 
-
-
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=True)
