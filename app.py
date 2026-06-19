@@ -28,7 +28,7 @@ def add():
         all_posts = load_data_from_json_file('storage.json')
 
         new_post = {
-            'id': len(all_posts) + 1,
+            'id': max((post['id'] for post in all_posts), default=0) + 1,
             'title': request.form.get('title'),
             'author': request.form.get('author'),
             'content': request.form.get('content')
@@ -77,7 +77,7 @@ def update(post_id):
         return redirect(url_for('index'))
 
     else:
-     return render_template('update.html', post=post)
+        return render_template('update.html', post=post)
 
 
 
